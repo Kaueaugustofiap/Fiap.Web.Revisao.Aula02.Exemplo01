@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Fiap.Web.Revisao.Aula02.Exemplo01.props" />
+</Project>
