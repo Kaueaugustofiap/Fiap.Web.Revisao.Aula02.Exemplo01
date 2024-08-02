@@ -1,11 +1,32 @@
-﻿<div>
-    <form>
-        <label>Nome:</label>
-        <input />
-        <br />
-        <label>Cpf:</label>
-        <input />
-        <br />
-        <button type="submit">Cadastrar</button>
-    </form>
-</div>
+﻿@model Cliente
+
+@{
+    ViewData["Title"] = "Cadastrar";
+}
+
+<h1>Cadastrar</h1>
+
+@TempData["nome"]
+
+@if (ViewBag.cliente != null)
+{
+    <div>
+        @ViewData["msg"] <br />
+        @ViewData["nome"]
+        @ViewBag.cliente.Nome <br>
+        Nome: @Model.Nome Cpf: @Model.Cpf
+    </div>
+}
+
+
+<form method="post">
+    <div class="mb-3">
+        <label for="id-nome">Nome</label>
+        <input type="text" name="nome" id="id-nome" class="form-control"/>
+    </div>
+    <div class="mb-3">
+        <label for="id-cpf">CPF</label>
+        <input type="text" name="cpf" id="id-cpf" class="form-control" />
+    </div>
+    <input type="submit" value="Cadastrar" class="btn btn-success"/>
+</form>

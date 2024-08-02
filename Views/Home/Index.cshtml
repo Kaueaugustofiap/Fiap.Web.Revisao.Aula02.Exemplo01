@@ -1,8 +1,11 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<!-- Link para a página de cadastrar um usuário-->
+<a asp-action="cadastrar" asp-controller="usuario" class="btn btn-outline-warning">Cadastro de Usuário</a>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!-- Link para a página de cadastrar um cliente-->
+<a asp-action="cadastrar" asp-controller="cliente" class="btn btn-outline-primary">Cadastro de Cliente</a>
+
+<!-- Link para a página de cadastrar um planeta-->
+<a asp-action="cadastrar" asp-controller="planeta" class="btn btn-outline-dark">Cadastro de Planeta</a>
