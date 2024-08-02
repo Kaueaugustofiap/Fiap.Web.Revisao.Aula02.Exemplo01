@@ -1,0 +1,48 @@
+﻿@model Planeta
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h1>Atualização do Planeta</h1>
+
+<form asp-action="editar">
+    <input asp-for="Id" />
+    <div class="mb-3">
+        <label asp-for="Nome"></label>
+        <input asp-for="Nome" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="TempoRotacao"></label>
+        <input asp-for="TempoRotacao" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="DataDescoberta"></label>
+        <input asp-for="DataDescoberta" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Galaxia"></label>
+        <select asp-for="Galaxia" class="form-control" asp-items="@ViewBag.galaxias">
+            <option>Selecione</option>
+        </select>
+    </div>
+    @foreach (var item in ViewBag.atmosferas)
+    {
+        <div class="mb-3">
+            <input type="radio" asp-for="Atmosfera" id="@item" value="@item" />
+            <label for="@item">@item</label>
+        </div>
+    }
+    <div class="mb-3">
+        <label asp-for="Tipo"></label>
+        <select asp-for="Tipo" class="form-control"
+                asp-items="@Html.GetEnumSelectList<TipoPlaneta>()">
+            <option>Selecione</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Habitavel"></label>
+        <input asp-for="Habitavel" />
+    </div>
+    <input type="submit" value="Editar" class="btn btn-outline-success" />
+    <a asp-action="index" class="btn btn-outline-primary">Planetas</a>
+</form>
